@@ -1,0 +1,6 @@
+c:\users\tothg\documents\visual studio 2015\Projects\DAW-oras\DAW-oras\bin\Debug\DAW-oras.exe.config
+c:\users\tothg\documents\visual studio 2015\Projects\DAW-oras\DAW-oras\obj\Debug\DAW-oras.csprojResolveAssemblyReference.cache
+c:\users\tothg\documents\visual studio 2015\Projects\DAW-oras\DAW-oras\bin\Debug\DAW-oras.exe
+c:\users\tothg\documents\visual studio 2015\Projects\DAW-oras\DAW-oras\bin\Debug\DAW-oras.pdb
+c:\users\tothg\documents\visual studio 2015\Projects\DAW-oras\DAW-oras\obj\Debug\DAW-oras.exe
+c:\users\tothg\documents\visual studio 2015\Projects\DAW-oras\DAW-oras\obj\Debug\DAW-oras.pdb
