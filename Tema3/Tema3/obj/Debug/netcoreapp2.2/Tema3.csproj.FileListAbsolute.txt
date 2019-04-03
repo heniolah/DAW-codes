@@ -1,0 +1,14 @@
+c:\users\tothg\source\repos\Tema3\Tema3\bin\Debug\netcoreapp2.2\Tema3.deps.json
+c:\users\tothg\source\repos\Tema3\Tema3\bin\Debug\netcoreapp2.2\Tema3.runtimeconfig.json
+c:\users\tothg\source\repos\Tema3\Tema3\bin\Debug\netcoreapp2.2\Tema3.runtimeconfig.dev.json
+c:\users\tothg\source\repos\Tema3\Tema3\bin\Debug\netcoreapp2.2\Tema3.dll
+c:\users\tothg\source\repos\Tema3\Tema3\bin\Debug\netcoreapp2.2\Tema3.pdb
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.csprojAssemblyReference.cache
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.csproj.CoreCompileInputs.cache
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.RazorAssemblyInfo.cache
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.RazorAssemblyInfo.cs
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.AssemblyInfoInputs.cache
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.AssemblyInfo.cs
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.RazorTargetAssemblyInfo.cache
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.dll
+c:\users\tothg\source\repos\Tema3\Tema3\obj\Debug\netcoreapp2.2\Tema3.pdb
