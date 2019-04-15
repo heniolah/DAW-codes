@@ -1,0 +1,24 @@
+<h1>Movie Types</h1>
+<p>There are many movies I have watched over and over, but I don't remember all of them.</p>
+<p>Here you can choose a movie that you would like to watch.</p>
+
+<p *ngIf="!film"><em> Couldn't Load...</em></p>
+
+<table class='table' *ngIf="film">
+  <thead>
+    <tr>
+      <th>movieID</th>
+      <th>Title</th>
+      <th>Director</th>
+      <th>Ticket price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let f of film">
+      <td>{{ f.movieID }}</td>
+      <td>{{ f.Title }}</td>
+      <td>{{ f.Director }}</td>
+      <td>{{ f.TicketPrice }}</td>
+    </tr>
+  </tbody>
+</table>

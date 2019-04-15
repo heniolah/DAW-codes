@@ -1,0 +1,14 @@
+<h1>Counter</h1>
+
+<p>Here you can buy a movie ticket.</p>
+
+<p>Sold tickets: <strong>{{ soldTickets }}</strong></p>
+<p>Available tickets: <strong>{{ NumberOfTickets }}</strong></p>
+<p>Reserved tickets: <strong>{{ reservedTickets }}</strong></p>
+
+
+<button class="btn btn-primary" (click)="Buy()">I want to buy a ticket</button>
+<ul> </ul>
+<ul><button (click)="Reserve()">Reserve</button></ul>
+<li><button (click)="DeleteReserve()">Delete reserved ticket</button></li>
+<li><button (click)="BuyReserevedTickets()">Buy the reserved ticket</button></li>
