@@ -6,19 +6,18 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './fetch-data.component.html'
 })
 export class FetchDataComponent {
-  public film: Movies[];
+  public films: Movies[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Movies[]>(baseUrl + 'api/SampleDataController/Movies').subscribe(result => {
-      this.film = result;
+    http.get<Movies[]>(baseUrl + 'api/SampleData/Movies').subscribe(result => {
+      this.films = result;
     }, error => console.error(error));
   }
 }
 
-
 interface Movies {
-  ID: number;
+  movieID: string;
   title: string;
   director: string;
-  ticketPrice: number;
+  ticketPrice: string;
 }

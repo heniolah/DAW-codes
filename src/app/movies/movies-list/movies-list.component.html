@@ -1,0 +1,24 @@
+<h1>Movies</h1>
+
+<p>Many movies in the list</p>
+
+<div class="example-button-row">
+  <button mat-raised-button [routerLink]='["../edit"]' color="primary">Add</button>
+</div>
+
+<table mat-table [dataSource]="movies" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="name">
+    <t mat-header-cell *matHeaderCellDef style="width:45%"> Name </t>
+    <t mat-cell *matCellDef="let movie"> {{movie.name}} </t>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <t mat-header-cell *matHeaderCellDef style="width:10%"> Action </t>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-progress-bar mode="indeterminate" *ngIf="!movies"></mat-progress-bar>

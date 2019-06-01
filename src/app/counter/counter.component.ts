@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-counter-component',
@@ -10,25 +11,27 @@ export class CounterComponent {
   public reservedTickets = 0;
 
   public Buy() {
- 
-    this.soldTickets++;
-    this.TicketCounter();
-  }
-  public TicketCounter() {
-    this.NumberOfTickets--;
+    if (this.NumberOfTickets > 0) {
+      this.soldTickets++;
+      this.NumberOfTickets--;
+    }
   }
   public Reserve() {
-    this.reservedTickets++;
-    this.NumberOfTickets --;
+    if (this.NumberOfTickets > 0) {
+      this.reservedTickets++;
+      this.NumberOfTickets--;
+    }
   }
   public DeleteReserve() {
+    if (this.reservedTickets > 0){
     this.reservedTickets--;
-    this.NumberOfTickets++;
+      this.NumberOfTickets++;
+    }
   }
   public BuyReserevedTickets() {
-    this.reservedTickets--;
-    this.NumberOfTickets--;
+    if (this.reservedTickets >0) {
+      this.reservedTickets--;
+      this.soldTickets++;
+    }
   }
 }
-
-
