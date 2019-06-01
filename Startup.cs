@@ -5,8 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Text;
 
-namespace WebMoviesAngular
+namespace ExamenAngular
 {
     public class Startup
     {
@@ -20,6 +26,23 @@ namespace WebMoviesAngular
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+               .AddJwtBearer(options =>
+               {
+                   options.TokenValidationParameters =
+                       new TokenValidationParameters
+                       {
+                           ValidateIssuer = true,
+                           ValidateAudience = true,
+                           ValidateLifetime = true,
+                           ValidateIssuerSigningKey = true,
+                           ValidIssuer = Configuration.GetValue<string>("Authentication:Issuer"),
+                           ValidAudience = Configuration.GetValue<string>("Authentication:Issuer"),
+                           IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetValue<string>("Authentication:Secret"))),
+                           ClockSkew = TimeSpan.Zero
+                       };
+               });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // In production, the Angular files will be served from this directory
@@ -27,6 +50,12 @@ namespace WebMoviesAngular
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddDbContext<Data.ExamenAngularContext>(options =>
+                   options.UseSqlServer(Configuration.GetConnectionString("ExamenAngularContext")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+               .AddDefaultTokenProviders()
+               .AddEntityFrameworkStores<Data.ExamenAngularContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +75,8 @@ namespace WebMoviesAngular
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
